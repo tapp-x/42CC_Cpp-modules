@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 18:01:45 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/06 18:28:25 by tappourc         ###   ########.fr       */
+/*   Created: 2024/05/07 17:26:46 by tappourc          #+#    #+#             */
+/*   Updated: 2024/05/07 17:57:01 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "Phonebook.class.hpp"
+
 #include <iostream>
 
-Contact::Contact(void) {
-    std::cout << "This is a constructor" << std::endl;
+Phonebook::Phonebook(void)
+{
 }
 
-Contact::~Contact(void) {
-    std::cout << "This is a destructor" << std::endl;
+Phonebook::~Phonebook(void)
+{
+}
+
+void    Phonebook::add(){
+    std::cout << "in add" << std::endl;
+}
+
+void    Phonebook::search(){
+    std::cout << "in search" << std::endl;
 }
