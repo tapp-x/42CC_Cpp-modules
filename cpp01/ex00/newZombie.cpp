@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 16:54:31 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/08 18:51:25 by tappourc         ###   ########.fr       */
+/*   Created: 2024/05/08 16:41:04 by tappourc          #+#    #+#             */
+/*   Updated: 2024/05/08 18:18:26 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-int main(int ac, char **av)
-{
-	if (ac == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (1);
-	}
-	for (int i = 1; i < ac; i++)
-	{
-		std::string str = av[i];
-		for (size_t x = 0; x < str.length(); x++)
-		{
-			str[x] = std::toupper(str[x]);
-		}
-		std::cout << str;
-	}
-	std::cout << std::endl;
-}
+Zombie* newZombie( std::string name ) {
+	Zombie *p = new Zombie(name);
+	return (p);
+};

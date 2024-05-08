@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 16:54:31 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/08 18:51:25 by tappourc         ###   ########.fr       */
+/*   Created: 2024/05/08 16:41:49 by tappourc          #+#    #+#             */
+/*   Updated: 2024/05/08 18:31:51 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
+#include <string>
 #include <iostream>
 
-int main(int ac, char **av)
-{
-	if (ac == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (1);
-	}
-	for (int i = 1; i < ac; i++)
-	{
-		std::string str = av[i];
-		for (size_t x = 0; x < str.length(); x++)
-		{
-			str[x] = std::toupper(str[x]);
-		}
-		std::cout << str;
-	}
-	std::cout << std::endl;
-}
+class Zombie {
+
+public:
+	Zombie(std::string);
+	Zombie();
+	~Zombie();
+	void	annonce();
+	void	set_name(std::string name);
+
+private:
+	std::string _name;
+};
+
+Zombie* newZombie( std::string name );
+void randomChump( std::string name );
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:31:56 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/08 11:35:29 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:53:27 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ private:
     std::string _nickname;
     std::string _phoneNumber;
     std::string _darkestSecret;
-    int _index;
 
 public:
     Contact(void);
