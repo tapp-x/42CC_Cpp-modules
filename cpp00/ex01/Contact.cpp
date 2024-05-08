@@ -6,20 +6,41 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:16:01 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/07 17:46:10 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:37:08 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
-#include <iostream>
+#include "my_phonebook.hpp"
+
 
 Contact::Contact(void) 
 {
-    std::cout << "construct called" << std::endl;
+    // std::cout << "construct called" << std::endl;
 }
 
 Contact::~Contact(void) 
 {
+    // std::cout << "destruct called" << std::endl;
+}
+
+std::string Contact::get_firstname() {
+    return (this->_firstName);
+}
+
+std::string Contact::get_lastname() {
+    return (this->_lastName);
+}
+
+std::string Contact::get_nickname() {
+    return (this->_nickname);
+}
+
+std::string Contact::get_phoneNumber() {
+    return (this->_phoneNumber);
+}
+
+std::string Contact::get_darkestSecret() {
+    return (this->_darkestSecret);
 }
 
 void    Contact::init_contact(){
@@ -43,11 +64,16 @@ std::string   Contact::get_infos(std::string prompt) {
     std::string buffer;
     while(!my_bool)
     {
-        std::cout << prompt << ":";
+        std::cout << prompt << ": ";
         if (std::getline(std::cin, buffer))
         {
             if (!buffer.empty())
                 my_bool = true;
+        }
+        if (std::cin.eof() == true)
+        {
+            std::cout << "ctrl + D pressed : exit" << std::endl;
+            _Exit(1);
         }
     }
     return (buffer);
