@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/08 16:39:00 by tappourc          #+#    #+#              #
-#    Updated: 2024/05/09 14:43:31 by tappourc         ###   ########.fr        #
+#    Created: 2024/05/09 14:57:04 by tappourc          #+#    #+#              #
+#    Updated: 2024/05/09 14:57:26 by tappourc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,10 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-EXEC = zombieHorde
+EXEC = adress
 
 SRCS = \
 		main.cpp \
-		Zombie.cpp \
-		newZombie.cpp \
-		zombieHorde.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

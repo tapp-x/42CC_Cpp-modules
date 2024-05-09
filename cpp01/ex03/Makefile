@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/08 16:39:00 by tappourc          #+#    #+#              #
-#    Updated: 2024/05/09 14:43:31 by tappourc         ###   ########.fr        #
+#    Created: 2024/05/09 15:11:40 by tappourc          #+#    #+#              #
+#    Updated: 2024/05/09 18:51:18 by tappourc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-EXEC = zombieHorde
+EXEC = weapon
 
 SRCS = \
 		main.cpp \
-		Zombie.cpp \
-		newZombie.cpp \
-		zombieHorde.cpp \
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
