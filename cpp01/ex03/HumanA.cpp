@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:18:22 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/09 18:46:15 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/10 09:22:12 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,8 @@ HumanA::~HumanA() {
 
 void	HumanA::attack() {
 	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+}
+
+Weapon	&HumanA::getWeapon() {
+	return (this->_weapon);
 }

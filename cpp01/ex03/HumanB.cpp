@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:18:31 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/09 19:13:39 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/10 09:24:22 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ HumanB::~HumanB() {
 
 void	HumanB::attack() {
 	if (!this->_weapon)
-		std::cout << this->_name << " doesn't have weapon" << std::endl;
+		std::cout << this->_name << " attacks with bare hands" << std::endl;
 	else
 		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }
@@ -32,3 +32,6 @@ void	HumanB::setWeapon(Weapon &x){
 	this->_weapon = &x;
 }
 
+Weapon	*HumanB::getWeapon() {
+	return (this->_weapon);
+}

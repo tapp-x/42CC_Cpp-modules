@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:16:03 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/09 19:10:10 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/10 09:23:13 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ public:
 	~HumanB();
 	void	attack();
 	void	setWeapon(Weapon &x);
+	Weapon *getWeapon();
 
 private:
 	std::string _name;
