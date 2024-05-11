@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:32:52 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/08 10:39:03 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:18:52 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 class Phonebook {
 private:
@@ -28,7 +28,7 @@ public:
     void    exit();
     void    add();
     void    search();
-    
+
 };
 
 #endif

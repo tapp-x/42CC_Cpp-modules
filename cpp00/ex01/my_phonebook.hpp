@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 11:34:10 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/08 11:36:15 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:17:31 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <string>
 #include <cstdlib>
 
-#include "Phonebook.class.hpp"
-#include "Contact.class.hpp"
+#include "Phonebook.hpp"
+#include "Contact.hpp"
 
 #endif

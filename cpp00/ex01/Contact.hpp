@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:31:56 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/08 18:53:27 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:18:38 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 class Contact {
 
