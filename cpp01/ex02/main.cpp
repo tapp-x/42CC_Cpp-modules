@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 14:57:52 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/09 15:10:40 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:27:20 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 	std::string &stringREF = str;
 
 	std::cout << "Memory adress for str : " << &str << std::endl;
-	std::cout << "Memory adress for *stringPTR : " << &stringPTR << std::endl;
+	std::cout << "Memory adress for *stringPTR : " << stringPTR << std::endl;
 	std::cout << "Memory adress for stringREF : " << &stringREF << std::endl << std::endl;
 
 	std::cout << "Now let's print the value behind these memory adresses" << std::endl << std::endl;
