@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:17:11 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/09 19:18:21 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:40:25 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	const std::string getType();
 
 private:
-	std::string type;
+	std::string _type;
 
 };
 
