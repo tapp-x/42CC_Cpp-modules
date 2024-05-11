@@ -6,13 +6,13 @@
 #    By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 09:31:57 by tappourc          #+#    #+#              #
-#    Updated: 2024/05/10 10:01:26 by tappourc         ###   ########.fr        #
+#    Updated: 2024/05/10 17:21:16 by tappourc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 EXEC = harlFilter
 

@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 09:36:49 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/10 09:55:27 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:24:54 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,41 @@ void    Harl::complain(std::string level) {
     void        (Harl::*ptr_function[4])(void);
     std::string choice[4];
 
-    choice[0] = "debug";
-    choice[1] = "info";
-    choice[2] = "warning";
-    choice[3] = "error";
+    choice[0] = "DEBUG";
+    choice[1] = "INFO";
+    choice[2] = "WARNING";
+    choice[3] = "ERROR";
 
     ptr_function[0] = &Harl::debug;
     ptr_function[1] = &Harl::info;
     ptr_function[2] = &Harl::warning;
     ptr_function[3] = &Harl::error;
 
-    for (int i = 0;i  < 4; i++)
+	int i = 0;
+    while(i <= 4)
     {
         if (level == choice[i])
-            (this->*ptr_function[i])();
+            break;
+		i++;
     }
+	switch (i)
+	{
+	case 0:
+		std::cout << "[ DEBUG ]" << std::endl;
+		this->debug();
+	case 1:
+		std::cout << "[ INFO ]" << std::endl;
+		this->info();
+	case 2:
+		std::cout << "[ WARNING ]" << std::endl;
+		this->warning();
+	case 3:
+		std::cout << "[ ERROR ]" << std::endl;
+		this->error();
+		break;
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 }
 
 void    Harl::debug() {
