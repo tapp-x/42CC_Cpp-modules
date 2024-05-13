@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:12:48 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/12 19:39:34 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/13 09:52:34 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(std::string new_name)
 	this->_Energy_point = 50;
 }
 
-ScavTrap::ScavTrap(ScavTrap &copy) {
+ScavTrap::ScavTrap(ScavTrap &copy) : ClapTrap(copy){
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
@@ -74,7 +74,10 @@ void ScavTrap::takeDamage(unsigned int amount) {
 		std::cout << "A ScavTrap can't take less than 1 damage" << std::endl;
 		return ;
 	}
-	this->_Hit_point -= amount;
+	if (amount >= this->get_hit_point())
+		this->_Hit_point = 0;
+	else
+		this->_Hit_point -= amount;
 	std::cout << "ScavTrap : " << this->_name << " lost " << amount << " HP !" << std::endl;
 }
 

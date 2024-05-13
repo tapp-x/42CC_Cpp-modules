@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 16:22:17 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/12 19:33:12 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/13 09:53:19 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "A ClapTrap can't take less than 1 damage" << std::endl;
 		return ;
 	}
-	this->_Hit_point -= amount;
+	if (amount >= this->get_hit_point())
+		this->_Hit_point = 0;
+	else
+		this->_Hit_point -= amount;
 	std::cout << "ClapTrap : " << this->_name << " lost " << amount << " HP !" << std::endl;
 }
 
