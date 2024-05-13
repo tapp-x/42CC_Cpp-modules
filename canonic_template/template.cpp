@@ -9,7 +9,7 @@ Ex::~Ex() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-Ex::Ex(Ex &x) {
+Ex::Ex(Ex const &x) {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_value = x._value;
 }

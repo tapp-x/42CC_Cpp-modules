@@ -9,7 +9,7 @@ public:
 
 	Ex();
 	~Ex();
-	Ex(Ex& x);
+	Ex(Ex const &x);
 
 	Ex & operator=(Ex const &param);
 

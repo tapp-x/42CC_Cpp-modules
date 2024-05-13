@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 13:30:16 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/11 16:57:33 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:50:07 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ public:
 
 	Fixed();
 	~Fixed();
-	Fixed(Fixed& x);
+	Fixed(Fixed const &x);
+	
+	Fixed & operator=(Fixed const &param);
 
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
-	Fixed & operator=(Fixed const &param);
 
 private:
 

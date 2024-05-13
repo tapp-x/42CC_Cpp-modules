@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 13:30:00 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/11 17:00:42 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/13 16:49:58 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed &x) {
+Fixed::Fixed(Fixed const &x) {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_value = x._value;
 }
