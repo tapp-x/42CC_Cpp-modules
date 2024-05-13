@@ -6,7 +6,7 @@
 #    By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:14:27 by tappourc          #+#    #+#              #
-#    Updated: 2024/05/11 17:14:29 by tappourc         ###   ########.fr        #
+#    Updated: 2024/05/13 17:01:55 by tappourc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
-EXEC = fixed
+EXEC = Fixed_v2
 
 SRCS = \
 		main.cpp \

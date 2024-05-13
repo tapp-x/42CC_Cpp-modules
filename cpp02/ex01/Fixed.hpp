@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 13:30:16 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/11 17:20:59 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:00:17 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 
 public:
 	//constructor
 	Fixed();
-	Fixed(Fixed& x);
-	Fixed(const int nb);
-	Fixed(const float nb);
+	Fixed(Fixed const &x);
+	Fixed(const int int_nb);
+	Fixed(const float fl_nb);
 
 	//destructor
 	~Fixed();
@@ -41,5 +42,7 @@ private:
 	int	_value;
 	static const int _nb_bit = 8;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
