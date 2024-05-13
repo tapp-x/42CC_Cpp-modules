@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/12 16:21:17 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/13 10:20:00 by tappourc         ###   ########.fr       */
+/*   Created: 2024/05/12 17:13:29 by tappourc          #+#    #+#             */
+/*   Updated: 2024/05/12 19:19:54 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ScavTrap test("Emile");
-	test.takeDamage(7);
-	test.beRepaired(10);
-	test.guardGate();
-	test.attack("a pizza");
-	std::cout << "HP : " << test.get_hit_point()  << std::endl;
+public:
+	ScavTrap();
+	ScavTrap(std::string new_name);
+	ScavTrap(ScavTrap &copy);
+	~ScavTrap();
+	ScavTrap & operator=(ScavTrap const &param);
 
-	ScavTrap t2;
-	t2 = test;
+	void guardGate();
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+};
 
-	test.takeDamage(100);
-	t2.attack("random");
-
-	std::cout << "HP : " << test.get_hit_point() << std::endl;
-	test.attack("nothing");
-
-	return (0);
-}
+#endif
