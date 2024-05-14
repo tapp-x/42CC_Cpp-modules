@@ -6,11 +6,11 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:18:31 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/10 09:24:22 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/14 13:51:15 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "violence.hpp"
+#include "HumanB.hpp"
 
 HumanB::HumanB(std::string name) {
 	this->_name = name;

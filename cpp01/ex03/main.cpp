@@ -6,27 +6,11 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:12:53 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/09 19:17:32 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/14 13:52:05 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "violence.hpp"
-
-// int main ()
-// {
-// 	Weapon a, b, c;
-// 	a.setType("Uzi");
-// 	b.setType("Glock");
-
-// 	HumanA test = HumanA("Jonnhy", a);
-// 	HumanB second = HumanB("Felix");
-// 	second.set_weapon(&b);
-// 	HumanB third = HumanB("Carl");
-
-// 	test.attack();
-// 	second.attack();
-// 	third.attack();
-// }
+#include "HumanB.hpp"
 
 int main()
 {

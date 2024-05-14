@@ -6,11 +6,11 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:18:44 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/11 13:40:40 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/14 13:51:15 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "violence.hpp"
+#include "HumanB.hpp"
 
 Weapon::Weapon(std::string firsttype) {
 	this->_type = firsttype;

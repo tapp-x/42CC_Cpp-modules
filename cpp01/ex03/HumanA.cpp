@@ -6,11 +6,11 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:18:22 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/10 09:22:12 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/14 13:51:15 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "violence.hpp"
+#include "HumanB.hpp"
 
 HumanA::HumanA(std::string name, Weapon &x) : _name(name), _weapon(x) {}
 
