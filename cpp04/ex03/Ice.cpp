@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:09:00 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 17:09:24 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:18:22 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::Ice()
 {
-	this->type = "cure";
+	this->type = "ice";
 	std::cout << "Ice Constructor called." << std::endl;
 }
 

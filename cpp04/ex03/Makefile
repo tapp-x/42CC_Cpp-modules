@@ -6,7 +6,7 @@
 #    By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/15 15:54:45 by tappourc          #+#    #+#              #
-#    Updated: 2024/05/15 16:25:25 by tappourc         ###   ########.fr        #
+#    Updated: 2024/05/15 17:16:04 by tappourc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ SRCS = \
 		Materia.cpp \
 		Ice.cpp \
 		Cure.cpp \
-		MateriaSource.cpp \
-		Character.cpp \
+		# MateriaSource.cpp \
+		# Character.cpp \
 
 
 OBJS = $(SRCS:.cpp=.o)
