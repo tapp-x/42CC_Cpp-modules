@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:13:29 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/12 19:19:54 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:30:37 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ public:
 
 	void guardGate();
 	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 };
 
 #endif

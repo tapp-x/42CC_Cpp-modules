@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:12:48 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/13 09:52:34 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:29:38 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,35 +65,6 @@ void ScavTrap::attack(const std::string& target) {
 	}
 	std::cout << "ScavTrap " << this->_name << " attacks " \
 		<< target << ", causing " << this->_Attack_dammage << " points of damage!" << std::endl;
-	this->_Energy_point--;
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	if (amount == 0)
-	{
-		std::cout << "A ScavTrap can't take less than 1 damage" << std::endl;
-		return ;
-	}
-	if (amount >= this->get_hit_point())
-		this->_Hit_point = 0;
-	else
-		this->_Hit_point -= amount;
-	std::cout << "ScavTrap : " << this->_name << " lost " << amount << " HP !" << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-	if (this->_Hit_point <= 0)
-	{
-		std::cout << this->_name << " is already dead and can't do noting..." << std::endl;
-		return ;
-	}
-	if (amount <= 0)
-	{
-		std::cout << "A ScavTrap can't gain less than 1 HP" << std::endl;
-		return ;
-	}
-	this->_Hit_point += amount;
-	std::cout << "ScavTrap : " << this->_name << " gain " << amount << " HP !" << std::endl;
 	this->_Energy_point--;
 }
 

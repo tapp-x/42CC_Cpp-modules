@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 10:05:03 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/13 10:11:30 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:30:56 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,56 +45,6 @@ FragTrap & FragTrap::operator=(FragTrap const &param) {
 	this->_Hit_point = param.get_hit_point();
 	this->_Energy_point = param.get_energy_point();
 	return (*this);
-}
-
-void FragTrap::attack(const std::string& target) {
-	if (this->_Hit_point <= 0)
-	{
-		std::cout << this->_name << " is already dead and can't do noting..." << std::endl;
-		return ;
-	}
-	else if (this->_Energy_point <= 0)
-	{
-		std::cout << "Not enought energy to attack with FragTrap : " << this->_name << std::endl;
-		return ;
-	}
-	else if (this->_Attack_dammage <= 0)
-	{
-		std::cout << "Not enought attack_dmg to attack with FragTrap : " << this->_name << std::endl;
-		return ;
-	}
-	std::cout << "FragTrap " << this->_name << " attacks " \
-		<< target << ", causing " << this->_Attack_dammage << " points of damage!" << std::endl;
-	this->_Energy_point--;
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-	if (amount == 0)
-	{
-		std::cout << "A FragTrap can't take less than 1 damage" << std::endl;
-		return ;
-	}
-	if (amount >= this->get_hit_point())
-		this->_Hit_point = 0;
-	else
-		this->_Hit_point -= amount;
-	std::cout << "FragTrap : " << this->_name << " lost " << amount << " HP !" << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-	if (this->_Hit_point <= 0)
-	{
-		std::cout << this->_name << " is already dead and can't do noting..." << std::endl;
-		return ;
-	}
-	if (amount <= 0)
-	{
-		std::cout << "A FragTrap can't gain less than 1 HP" << std::endl;
-		return ;
-	}
-	this->_Hit_point += amount;
-	std::cout << "FragTrap : " << this->_name << " gain " << amount << " HP !" << std::endl;
-	this->_Energy_point--;
 }
 
 void    FragTrap::highFivesGuys() {
