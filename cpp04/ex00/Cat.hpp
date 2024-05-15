@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:35:08 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/14 16:03:55 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 13:01:18 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "Animal.hpp"
 
-class Cat : public Animal 
+class Cat : public Animal
 {
 public:
     Cat();
@@ -24,7 +24,7 @@ public:
     Cat(Cat const &x);
 	Cat & operator=(Cat const &param);
 
-    void makeSound();
+    void makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:34:21 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/14 16:01:41 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 13:01:24 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ Dog & Dog::operator=(Dog const &param) {
 	return (*this);
 }
 
-void Dog::makeSound() {
+void Dog::makeSound() const {
     std::cout << "Woof!" << std::endl;
 }

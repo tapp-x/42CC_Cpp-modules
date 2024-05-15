@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:33:41 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/14 16:01:49 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 13:01:12 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ Cat & Cat::operator=(Cat const &param) {
 	return (*this);
 }
 
-void Cat::makeSound() {
+void Cat::makeSound() const {
     std::cout << "Miaouu!" << std::endl;
 }
