@@ -6,7 +6,7 @@
 #    By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 16:39:00 by tappourc          #+#    #+#              #
-#    Updated: 2024/05/09 14:43:31 by tappourc         ###   ########.fr        #
+#    Updated: 2024/05/15 17:55:35 by tappourc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ EXEC = zombieHorde
 SRCS = \
 		main.cpp \
 		Zombie.cpp \
-		newZombie.cpp \
 		zombieHorde.cpp \
 
 OBJS = $(SRCS:.cpp=.o)

@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:41:49 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/09 14:23:58 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:54:13 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ private:
 	std::string _name;
 };
 
-Zombie* newZombie( std::string name );
 Zombie* zombieHorde( int N, std::string name );
 
 #endif

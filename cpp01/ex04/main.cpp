@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:01:33 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/10 16:24:18 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:53:58 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,14 @@ int main(int ac, char **av)
 	std::ifstream file;
 	std::ofstream newfile;
 
-	newfile.open(newfile_name.data(), file.out);
 	file.open(av[1], file.in);
 	if (file.fail())
+	{
+		std::cout << "Failed to open file" << std::endl;
+		return (1);
+	}
+	newfile.open(newfile_name.data(), file.out);
+	if (newfile.fail())
 	{
 		std::cout << "Failed to open file" << std::endl;
 		return (1);
