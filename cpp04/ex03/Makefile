@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+         #
+#    By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/15 15:54:45 by tappourc          #+#    #+#              #
-#    Updated: 2024/05/15 17:16:04 by tappourc         ###   ########.fr        #
+#    Updated: 2024/05/17 13:39:07 by theoappourc      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ EXEC = materia
 
 SRCS = \
 		main.cpp \
-		Materia.cpp \
+		AMateria.cpp \
 		Ice.cpp \
 		Cure.cpp \
-		# MateriaSource.cpp \
-		# Character.cpp \
+		MateriaSource.cpp \
+		Character.cpp \
 
 
 OBJS = $(SRCS:.cpp=.o)

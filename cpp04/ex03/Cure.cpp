@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:00:40 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 17:08:41 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:24:08 by theoappourc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure()
-{
+Cure::Cure() {
 	this->type = "cure";
 	std::cout << "Cure Constructor called." << std::endl;
 }
@@ -39,4 +38,8 @@ Cure::~Cure()
 AMateria* Cure::clone() const {
 	AMateria *a = new Cure();
 	return (a);
+}
+
+void Cure::use(ICharacter& target) {
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
