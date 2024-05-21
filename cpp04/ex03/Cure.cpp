@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
+/*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:00:40 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/17 13:24:08 by theoappourc      ###   ########.fr       */
+/*   Updated: 2024/05/21 16:47:14 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ Cure::Cure() {
 	std::cout << "Cure Constructor called." << std::endl;
 }
 
-Cure::Cure(Cure const &cpy)
-{
+Cure::Cure(Cure const &cpy) : AMateria(cpy) {
 	std::cout << "Cure Copy constructor called." << std::endl;
 	*this = cpy;
 }
 
-Cure & Cure::operator=(Cure const &cpy)
-{
+Cure & Cure::operator=(Cure const &cpy) {
 	std::cout << "Cure assignation operator called" << std::endl;
 	this->type = cpy.getType();
 	return (*this);

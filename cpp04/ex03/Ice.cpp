@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
+/*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:09:00 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/17 13:00:03 by theoappourc      ###   ########.fr       */
+/*   Updated: 2024/05/21 16:47:41 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ Ice::Ice()
 	std::cout << "Ice Constructor called." << std::endl;
 }
 
-Ice::Ice(Ice const &cpy)
-{
+Ice::Ice(Ice const &cpy) : AMateria(cpy) {
 	std::cout << "Ice Copy constructor called." << std::endl;
 	*this = cpy;
 }

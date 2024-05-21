@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
+/*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:27:00 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/17 14:17:06 by theoappourc      ###   ########.fr       */
+/*   Updated: 2024/05/21 17:15:23 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,6 @@
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
 #include "Character.hpp"
-
-// int main ()
-// {
-// 	AMateria *a = new Ice();
-
-//     AMateria *b = a->clone();
-//     std::cout << b->getType() << std::endl;
-
-//     AMateria *c = new Cure();
-//     b = c->clone();
-//     std::cout << b->getType() << std::endl;
-// }
 
 int main() 
 {
