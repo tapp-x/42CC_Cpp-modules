@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:01:17 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 17:05:21 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:10:04 by theoappourc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #ifndef CURE_HPP
 #define CURE_HPP
 
-#include "Materia.hpp"
+#include "AMateria.hpp"
 
 class Cure : public AMateria
 {
@@ -26,7 +26,8 @@ class Cure : public AMateria
 
 		~Cure();
 
-		 AMateria* clone() const;
+		AMateria* clone() const;
+		void use(ICharacter& target);
 	private:
 };
 

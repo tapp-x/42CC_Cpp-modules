@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Materia.hpp"
+#include "AMateria.hpp"
 
 AMateria::AMateria()
 {
@@ -44,4 +44,9 @@ AMateria::~AMateria()
 
 std::string const & AMateria::getType() const {
 	return (this->type);
+}
+
+void AMateria::use(ICharacter& target) {
+    (void)target;
+    std::cout << "Using AMateria" << std::endl;
 }

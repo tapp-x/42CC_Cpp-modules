@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:07:29 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 17:07:48 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:10:11 by theoappourc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 #define ICE_HPP
 
-#include "Materia.hpp"
+#include "AMateria.hpp"
 
 class Ice : public AMateria
 {
@@ -25,7 +25,9 @@ class Ice : public AMateria
 
 		~Ice();
 
-		 AMateria* clone() const;
+		AMateria* clone() const;
+		void use(ICharacter& target);
+		 
 	private:
 };
 
