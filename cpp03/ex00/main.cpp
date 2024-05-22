@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 16:21:17 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/13 09:46:26 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:11:36 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,32 @@
 
 int main()
 {
-	ClapTrap ct1;
-	ClapTrap ct2("test");
+	ClapTrap claptrap("BobClapTrap");
 
-	ct1 = ct2;
-	// ClapTrap("Emile");
+	std::cout << std::endl;
+	std::cout << "Attack empty target:" << std::endl;
+	claptrap.attack("");
+	std::cout << "Attack with target:" << std::endl;
+	for (int i = 0; i < 5; i++)
+		claptrap.attack("test");
+	std::cout << std::endl;
 
-	std::string target1 = "a cat";
-	ct1.attack(target1);
-	ct2.takeDamage(5);
-	ct2.takeDamage(5);
-	ct2.takeDamage(5);
+	std::cout << "Take damage with invalid amount:" << std::endl;
+	claptrap.takeDamage(-1001);
+	std::cout << "Take damage with 0 amount:" << std::endl;
+	claptrap.takeDamage(0);
+	std::cout << "Take damage with valid amount:" << std::endl;
+	for (int i = 0; i < 5; i++)
+		claptrap.takeDamage(5);
+	std::cout << std::endl;
 
-	ct2.attack("a target");
-	// ct3.beRepaired(3);
-
+	std::cout << "Repair with invalid amount:" << std::endl;
+	claptrap.beRepaired(-10);
+	std::cout << "Repair with 0 amount:" << std::endl;
+	claptrap.beRepaired(0);
+	std::cout << "Repair with valid amount:" << std::endl;
+	for (int i = 0; i < 6; i++)
+		claptrap.beRepaired(1);
+	std::cout << std::endl;
 	return (0);
 }

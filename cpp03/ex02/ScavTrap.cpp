@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:12:48 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 17:30:30 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:37:39 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,24 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &param) {
 }
 
 void ScavTrap::attack(const std::string& target) {
-	if (this->_Hit_point <= 0)
+	if (target.empty())
 	{
-		std::cout << this->_name << " is already dead and can't do noting..." << std::endl;
+		std::cout << " Try to attack but target is empty" << std::endl;
 		return ;
 	}
-	else if (this->_Energy_point <= 0)
+	if (this->_Hit_point <= 0)
 	{
-		std::cout << "Not enought energy to attack with ScavTrap : " << this->_name << std::endl;
+		std::cout << this->_name << " is already dead and can't do nothing..." << std::endl;
+		return ;
+	}
+	if (this->_Energy_point <= 0)
+	{
+		std::cout << "Not enought energy to attack with ClapTrap : " << this->_name << std::endl;
 		return ;
 	}
 	else if (this->_Attack_dammage <= 0)
 	{
-		std::cout << "Not enought attack_dmg to attack with ScavTrap : " << this->_name << std::endl;
+		std::cout << "Try to attack: " << target << " but not enough attack_dmg " << this->_name << std::endl;
 		return ;
 	}
 	std::cout << "ScavTrap " << this->_name << " attacks " \
