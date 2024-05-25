@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 16:22:17 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/13 09:53:31 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:09:43 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ ClapTrap::ClapTrap() {
 	this->_Energy_point = 10;;
 }
 
-ClapTrap::ClapTrap(std::string new_name)
-{
+ClapTrap::ClapTrap(std::string new_name) {
 	std::cout << "New ClapTrap created with name : " << new_name << std::endl;
 	this->_name = new_name;
 	this->_Attack_dammage = 0;
@@ -33,8 +32,7 @@ ClapTrap::ClapTrap(ClapTrap &copy) {
 	*this = copy;
 }
 
-ClapTrap::~ClapTrap()
-{
+ClapTrap::~ClapTrap() {
 	std::cout << "Destructor called for ClapTrap : " << this->_name << std::endl;
 }
 
@@ -48,9 +46,14 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &param) {
 }
 
 void ClapTrap::attack(const std::string& target) {
+	if (target.empty())
+	{
+		std::cout << " Try to attack but target is empty" << std::endl;
+		return ;
+	}
 	if (this->_Hit_point <= 0)
 	{
-		std::cout << this->_name << " is already dead and can't do noting..." << std::endl;
+		std::cout << this->_name << " is already dead and can't do nothing..." << std::endl;
 		return ;
 	}
 	if (this->_Energy_point <= 0)
@@ -60,7 +63,7 @@ void ClapTrap::attack(const std::string& target) {
 	}
 	else if (this->_Attack_dammage <= 0)
 	{
-		std::cout << "Not enought attack_dmg to attack with ClapTrap : " << this->_name << std::endl;
+		std::cout << "Try to attack: " << target << " but not enough attack_dmg " << this->_name << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->_name << " attacks " \
@@ -69,7 +72,12 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (amount <= 0)
+	if (this->_Hit_point <= 0)
+	{
+		std::cout << this->get_name() << " is already dead, stop attack him !" << std::endl;
+		return ;
+	}
+	if ((int)amount <= 0)
 	{
 		std::cout << "A ClapTrap can't take less than 1 damage" << std::endl;
 		return ;
@@ -82,17 +90,19 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (this->_Hit_point <= 0)
+	if (this->_Hit_point >= 10)
 	{
-		std::cout << this->_name << " is already dead and can't do noting..." << std::endl;
+		std::cout << this->_name << " is already at max HP" << std::endl;
 		return ;
 	}
-	if (amount <= 0)
+	if ((int)amount <= 0)
 	{
 		std::cout << "A ClapTrap can't gain less than 1 HP" << std::endl;
 		return ;
 	}
 	this->_Hit_point += amount;
+	if (this->_Hit_point > 10)
+		this->_Hit_point = 10;
 	std::cout << "ClapTrap : " << this->_name << " gain " << amount << " HP !" << std::endl;
 	this->_Energy_point--;
 }
