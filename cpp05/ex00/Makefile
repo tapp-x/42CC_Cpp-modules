@@ -3,15 +3,11 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
-EXEC = materia
+EXEC = Bureaucrat
 
 SRCS = \
 		main.cpp \
-		AMateria.cpp \
-		Ice.cpp \
-		Cure.cpp \
-		MateriaSource.cpp \
-		Character.cpp \
+		Bureaucrat.cpp \
 
 
 OBJS = $(SRCS:.cpp=.o)
