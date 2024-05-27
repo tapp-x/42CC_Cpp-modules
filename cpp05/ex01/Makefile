@@ -3,7 +3,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
-EXEC = Bureaucrat
+EXEC = Form
 
 SRCS = \
 		main.cpp \
