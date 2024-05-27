@@ -6,11 +6,12 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:00:04 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/27 16:05:02 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/27 16:29:34 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
     : AForm("ShrubberyCreationForm", 145, 137), _target(target) {

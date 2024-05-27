@@ -6,12 +6,12 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 20:19:26 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/27 15:29:48 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/27 16:23:35 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(std::string name,  int grade) : _name(name) {
     valid_grade(grade);
@@ -75,11 +75,20 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
     return os;
 }
 
-void Bureaucrat::signForm(Form& form) {
+void Bureaucrat::signForm(AForm& form) {
     try {
         form.beSigned(*this);
         std::cout << this->get_name() << " signed " << form.get_name() << std::endl;
     } catch (std::exception& except) {
         std::cout << this->get_name() << " couldn't sign " << form.get_name() << " because " << except.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(const AForm& form) {
+    try {
+        form.execute(*this);
+        std::cout << this->get_name() << " executed " << form.get_name() << std::endl;
+    } catch (std::exception& except) {
+        std::cout << this->get_name() << " couldn't execute " << form.get_name() << " because " << except.what() << std::endl;
     }
 }
