@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:00:04 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/27 16:29:34 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:09:40 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
     if (executor.get_grade() > this->get_exec_grade())
         throw AForm::GradeTooLowException();
 
-    std::ofstream ofs(_target + "_shrubbery");
+    std::ofstream ofs((this->_target + "_shrubbery").c_str());
     if (ofs.fail()) {
         std::cerr << "Failed to create the shrubbery file." << std::endl;
         return;
