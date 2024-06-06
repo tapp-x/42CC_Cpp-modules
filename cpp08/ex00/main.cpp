@@ -6,11 +6,15 @@ int main() {
     for (int i = 0; i < 10; ++i)
         lst.push_back(i);
 
-    try {
-        std::list<int>::iterator it = easyfind(lst, 5);
-        std::cout << "Element found in list: " << *it << std::endl;
-    } catch (const NotFoundException& e) {
-        std::cerr << e.what() << std::endl;
+    for (int i = 0; i < 10; ++i)
+    {
+
+        try {
+            std::list<int>::iterator it = easyfind(lst, i);
+            std::cout << "Element found in list: " << *it << std::endl;
+        } catch (const NotFoundException& e) {
+            std::cerr << e.what() << std::endl;
+        }
     }
 
     try {
