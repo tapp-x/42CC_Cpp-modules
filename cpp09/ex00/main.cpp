@@ -26,7 +26,8 @@ int main(int argc, char* argv[])
     try {
         BitcoinExchange btc("data.csv");
         std::ifstream inputFile(argv[1]);
-        if (!inputFile.is_open()) {
+        if (!inputFile.is_open()) 
+        {
             std::cerr << "Error: could not open file." << std::endl;
             return (1);
         }
@@ -35,6 +36,7 @@ int main(int argc, char* argv[])
         std::getline(inputFile, line);
         if (line.compare("date | value"))
             throw std::runtime_error("Error: bad input format");
+        
         while (std::getline(inputFile, line)) 
         {
             std::istringstream str_s(line);
@@ -51,7 +53,6 @@ int main(int argc, char* argv[])
                     std::istringstream valueStream(value);
                     double amount;
                     valueStream >> amount;
-
                     if (valueStream.fail() || !valueStream.eof() || amount < 0 || amount > 1000)
                         throw std::runtime_error("Error: invalid value");
 

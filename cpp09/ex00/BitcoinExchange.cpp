@@ -33,9 +33,8 @@ void BitcoinExchange::loadDatabase(const std::string& dbFile)
                 throw std::runtime_error("Error: wrong database format.");
             exchangeRates[date] = rate;
         } 
-        else {
+        else
             throw std::runtime_error("Error: wrong database format.");
-        }
     }
     file.close();
 }
@@ -92,6 +91,7 @@ bool BitcoinExchange::isLeapYear(int year) const {
 
 double BitcoinExchange::getBitcoinValue(const std::string& date, double amount) const {
     std::map<std::string, double>::const_iterator it = exchangeRates.lower_bound(date);
+
     if (it == exchangeRates.end() || (it != exchangeRates.begin() && it->first != date))
         --it;
     if (it == exchangeRates.end())
