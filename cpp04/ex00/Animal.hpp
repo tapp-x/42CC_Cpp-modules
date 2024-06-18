@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:35:01 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 13:41:04 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:37:40 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 
 public:
     Animal();
-	~Animal();
+	virtual ~Animal();
 
 	Animal(const Animal &cpy);
 	Animal& operator=(const Animal &equal);
