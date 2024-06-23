@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:34:01 by tappourc          #+#    #+#             */
-/*   Updated: 2024/06/23 14:58:24 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/06/23 15:35:06 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ Animal & Animal::operator=(Animal const &equal) {
 	return (*this);
 }
 
-void Animal::makeSound() const  {
-    std::cout << "Basic animal song : RRRRRRR" << std::endl;
-}
+// void Animal::makeSound() const  {
+//     std::cout << "Basic animal song : RRRRRRR" << std::endl;
+// }
 
 const std::string&  Animal::getType(void) const{
     return (this->type);

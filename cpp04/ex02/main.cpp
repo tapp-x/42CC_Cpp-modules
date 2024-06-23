@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:36:08 by tappourc          #+#    #+#             */
-/*   Updated: 2024/06/23 15:25:23 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/06/23 15:37:07 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 int main() {
 	{
+		// Can't compile
+		// Animal test;
 		Animal* animals[10];
 
 		for (int i = 0; i < 5; ++i)
