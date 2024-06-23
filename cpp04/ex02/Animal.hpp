@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:35:01 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 15:42:58 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/06/23 14:55:34 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ protected:
     std::string type;
 
 public:
-	virtual ~Animal();
     Animal();
-	Animal(const Animal &cpy);
+	virtual ~Animal();
 
+	Animal(const Animal &cpy);
 	Animal& operator=(const Animal &equal);
 
-	virtual void makeSound() const = 0;
+	virtual void makeSound() const;
 	const std::string&  getType(void) const;
 };
 

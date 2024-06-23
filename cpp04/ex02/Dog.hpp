@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:35:14 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/15 14:23:16 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/06/23 14:52:51 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ public:
 	Dog & operator=(Dog const &param);
 
     void makeSound() const ;
+    Brain *getBrain() const;
+    void setBrain(Brain *brain);
 
 private:
-	Brain *a_brain;
+	Brain *brain;
 };
 
 #endif
