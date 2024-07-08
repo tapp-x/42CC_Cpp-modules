@@ -1,19 +1,17 @@
-#include <iostream>
-#include <vector>
-#include <sstream>
+#include "PmergeMe.hpp"
 
-int main(int argc, char* argv[]) 
+int main(int ac, char** av) 
 {
-    if (argc < 2)
+    if (ac < 2)
     {
-        std::cerr << "Usage: " << argv[0] << " <list of positive integers>\n";
+        std::cerr << "Usage: " << av[0] << " <list of positive integers>\n";
         return (1);
     }
     std::vector<int> data;
-    for (int i = 1; i < argc; ++i) 
+    for (int i = 1; i < ac; ++i) 
     {
         int num;
-        std::stringstream ss(argv[i]);
+        std::stringstream ss(av[i]);
         if (!(ss >> num) || num < 0) 
         {
             std::cerr << "Error: All arguments must be positive integers.\n";
@@ -21,5 +19,14 @@ int main(int argc, char* argv[])
         }
         data.push_back(num);
     }
+    PmergeMe sorter(data);
+    std::cout << "Before sorting:\n";
+    sorter.display();
+
+    sorter.sortWithVector();
+    sorter.sortWithList();
+
+    std::cout << "After sorting:\n";
+    sorter.display();
     return (0);
 }
