@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 16:35:33 by tappourc          #+#    #+#             */
-/*   Updated: 2024/07/08 17:00:50 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:55:20 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ private:
     void fordJohnsonSortList(std::list<int>& lst);
     void mergeInsertionSortList(std::list<int>& lst);
     void insertionSortList(std::list<int>& lst);
-    void mergeList(std::list<int>& lst);
+    void mergeList(std::list<int>& lst, std::list<int>& left, std::list<int>& right);
 };
 
 #endif
