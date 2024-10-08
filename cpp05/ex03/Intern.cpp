@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:27:35 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/28 15:39:59 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:08:26 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,18 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target) 
         new RobotomyRequestForm(target),
         new PresidentialPardonForm(target)
     };
-
+    int pos = -1;
     for (int i = 0; i < 3; ++i) {
         if (formTypes[i] == formName) {
             std::cout << "Intern creates " << formName << std::endl;
-            return forms[i];
+            pos = i;
         }
-        delete forms[i];
+        else
+            delete forms[i];
     }
-    std::cout << "Form name " << formName << " not recognized" << std::endl;
-    return NULL;
+    if (pos == -1) {
+        std::cout << "Form name " << formName << " not recognized" << std::endl;
+        return NULL;
+    }
+    return (forms[pos]);    
 }
