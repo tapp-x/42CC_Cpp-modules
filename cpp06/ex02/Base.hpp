@@ -6,7 +6,7 @@
 /*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:13:51 by tappourc          #+#    #+#             */
-/*   Updated: 2024/05/31 16:15:35 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:30:10 by tappourc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Base {
 public:
-    virtual ~Base();
+	virtual ~Base();
 };
 
 Base* generate();
