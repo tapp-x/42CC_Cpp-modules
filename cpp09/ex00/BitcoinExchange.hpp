@@ -3,6 +3,14 @@
 
 #include <string>
 #include <map>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <stdexcept>
+#include <ctime>
+#include <cstring>
+#include <cstdlib>
+#include <ctime>
 
 class BitcoinExchange {
 public:

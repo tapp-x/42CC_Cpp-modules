@@ -1,4 +1,5 @@
 date | value
+ | 
 Exemples de mois / jours trop grand/petit
 2021-13-01 | 20
 2021-00-10 | 20
@@ -20,3 +21,12 @@ Mauvais format YYYY-MM-DD
 20210101 | 20
 2021-0101 | 20
 2021-01- 01 | 20
+Bonus et trucs random:
+|
+2021----01 | 20
+2021--1-01 | 20
+2021-0101 |
+| 20
+10
+---------- | 20
+---1--1--1 | 20

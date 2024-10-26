@@ -1,8 +1,4 @@
 #include "BitcoinExchange.hpp"
-#include <fstream>
-#include <sstream>
-#include <iostream>
-#include <stdexcept>
 
 BitcoinExchange::BitcoinExchange(const std::string& dbFile) {
 	loadDatabase(dbFile);
@@ -43,12 +39,17 @@ bool BitcoinExchange::isValidDate(const std::string& date) const {
 	if (date.size() != 10 || date[4] != '-' || date[7] != '-')
 		return (false);
 
-	int year = std::atoi(date.substr(0, 4).c_str());
-	int month = std::atoi(date.substr(5, 2).c_str());
-	int day = std::atoi(date.substr(8, 2).c_str());
+	std::string year_str = date.substr(0, 4);
+	std::string month_str = date.substr(5, 2);
+	std::string day_str = date.substr(8, 2);
 
 	struct tm timeinfo;
 	memset(&timeinfo, 0, sizeof(struct tm));
+
+	int year = std::atoi(year_str.c_str());
+	int month = std::atoi(month_str.c_str());
+	int day = std::atoi(day_str.c_str());
+
 	timeinfo.tm_year = year - 1900;
 	timeinfo.tm_mon = month - 1;
 	timeinfo.tm_mday = day;
