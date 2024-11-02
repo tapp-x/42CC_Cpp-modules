@@ -44,10 +44,10 @@ int main(int argc, char* argv[])
 			if (std::getline(str_s, date, '|') && std::getline(str_s, value)) 
 			{
 				try {
-					if (date.empty() || value.empty())
-						throw std::runtime_error("Error: empty date or value");
+					if (date.empty() || value.empty() || !isValidValue(value))
+						throw std::runtime_error("Error: bad date or value");
 					date = date.substr(0, date.find_last_not_of(" \t\n\r\f\v") + 1);
-					value = value.substr(value.find_first_not_of(" \t\n\r\f\v"));
+					value = value.substr(0, value.find_first_not_of(" \t\n\r\f\v") + 1);
 					if (!btc.isValidDate(date))
 						throw std::runtime_error("Error: invalid date format");
 

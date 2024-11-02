@@ -22,8 +22,10 @@ public:
 
 private:
 	std::map<std::string, double> exchangeRates;
-
 	void loadDatabase(const std::string& dbFile);
+
+	BitcoinExchange(const BitcoinExchange& other);
+	BitcoinExchange& operator=(const BitcoinExchange& other);
 };
 
 #endif
