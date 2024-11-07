@@ -22,14 +22,14 @@ int main(int ac, char** av)
 	}
 
 	PmergeMe sorter(data);
-	sorter.printVector(data, "Before:");	
+	// sorter.printVector(data, "Before:");	
 
 	double vecTime = sorter.sortWithVector();
-	double deqTime = sorter.sortWithDeque();
+	// double deqTime = sorter.sortWithDeque();
 
-	sorter.final_display();
+	// sorter.final_display();
 	std::cout << "Time taken to sort with vector: " << vecTime << " us" << std::endl;
-	std::cout << "Time taken to sort with deque: " << deqTime << " us" << std::endl;
+	// std::cout << "Time taken to sort with deque: " << deqTime << " us" << std::endl;
 
 	return (0);
 }

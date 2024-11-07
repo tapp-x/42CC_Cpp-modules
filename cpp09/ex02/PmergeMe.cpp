@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tappourc <tappourc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 16:11:11 by tappourc          #+#    #+#             */
-/*   Updated: 2024/10/21 22:03:44 by tappourc         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:06:02 by theoappourc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,15 @@ void PmergeMe::initializeVecPairs(const std::vector<int>& input) {
 			_vecPairs.push_back(std::make_pair(input[i], input[i])); // Si le nombre d'éléments est impair
 		}
 	}
-	// printVector(input, "Vector:");
+	printVecPairs(_vecPairs);
+	for (size_t i = 0; i < _vecPairs.size(); ++i) {
+		if (i != _vecPairs.size() - 1)
+			_minVec.push_back(std::min(_vecPairs[i].first, _vecPairs[i].second));
+		_maxVec.push_back(std::max(_vecPairs[i].first, _vecPairs[i].second));
+	}
+	std::cout << "Now two Vecs :" << std::endl;
+	printVector(_minVec, "Min of pairs :");
+	printVector(_maxVec, "Max of pairs :");
 }
 
 void PmergeMe::initializeDeqPairs(const std::deque<int>& input) {
@@ -57,7 +65,14 @@ void PmergeMe::initializeDeqPairs(const std::deque<int>& input) {
 			_deqPairs.push_back(std::make_pair(input[i], input[i])); // Si le nombre d'éléments est impair
 		}
 	}
-	// printDeque(input, "Deque:");
+	// printDeqPairs(_deqPairs);
+	for (size_t i = 0; i < _deqPairs.size(); ++i) {
+		_minDeq.push_back(std::min(_deqPairs[i].first, _deqPairs[i].second));
+		_maxDeq.push_back(std::max(_deqPairs[i].first, _deqPairs[i].second));
+	}
+	// std::cout << "Now two Deq :" << std::endl;
+	// printDeque(_minDeq, "Min of pairs :");
+	// printDeque(_maxDeq, "Max of pairs :");
 }
 
 /* ************************************************************************** */
@@ -68,141 +83,37 @@ void PmergeMe::initializeDeqPairs(const std::deque<int>& input) {
 
 double PmergeMe::sortWithVector() {
 	std::clock_t start = std::clock();
-	std::vector<int> sortedVector;
-	for (size_t i = 0; i < _vecPairs.size(); ++i) {
-		sortedVector.push_back(_vecPairs[i].first);
-	}
-	mergeInsertionSortVector(sortedVector, 0, sortedVector.size() - 1);
-	for (size_t i = 0; i < _vecPairs.size(); ++i) {
-		sortedVector.push_back(_vecPairs[i].second);
-	}
-	mergeInsertionSortVector(sortedVector, 0, sortedVector.size() - 1);
-	_resultVector = sortedVector;
+	
+	// Start with the recursive sort
+	mergeInsertionSortVector(_maxVec, 0, _maxVec.size() - 1);
+	_resultVector = _maxVec;
+	printVector(_maxVec, "After recursive sort :");
+
+	// Here handle the first insertion :
+	// insert the min corresponding to _vecMax[0]
+	
+
+	// for (size_t i = 0; i < _vecPairs.size(); ++i) {
+	// 	sortedVector.push_back(_vecPairs[i].second);
+	// }
+	// mergeInsertionSortVector(sortedVector, 0, sortedVector.size() - 1);
+	// _resultVector = sortedVector;
 	std::clock_t end = std::clock();
 	double elapsed = double(end - start) / CLOCKS_PER_SEC * 1000000.0;
 	return (elapsed);
 }
 
 void PmergeMe::mergeInsertionSortVector(std::vector<int>& vec, int left, int right) {
+	// printVector(vec, "enter with this vec:");
 	if (right - left + 1 <= 5) {
 		insertionSortVector(vec, left, right);
 	} else {
 		int mid = left + (right - left) / 2;
 		mergeInsertionSortVector(vec, left, mid);
 		mergeInsertionSortVector(vec, mid + 1, right);
-		mergeVector(vec, left, mid, right);
 	}
-	// printVector(vec, "After mergeInsertionSortVector:");
 }
 
-void PmergeMe::mergeVector(std::vector<int>& vec, int left, int mid, int right) {
-	int n1 = mid - left + 1;
-	int n2 = right - mid;
-
-	std::vector<int> L(n1), R(n2);
-
-	for (int i = 0; i < n1; ++i)
-		L[i] = vec[left + i];
-	for (int j = 0; j < n2; ++j)
-		R[j] = vec[mid + 1 + j];
-
-	int i = 0, j = 0, k = left;
-	while (i < n1 && j < n2) {
-		if (L[i] <= R[j]) {
-			vec[k] = L[i];
-			++i;
-		} else {
-			vec[k] = R[j];
-			++j;
-		}
-		++k;
-	}
-
-	while (i < n1) {
-		vec[k] = L[i];
-		++i;
-		++k;
-	}
-
-	while (j < n2) {
-		vec[k] = R[j];
-		++j;
-		++k;
-	}
-	// printVector(vec, "After mergeVector:");
-}
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                            Deque Part                                      */
-/*                                                                            */
-/* ************************************************************************** */
-
-double PmergeMe::sortWithDeque() {
-	std::clock_t start = std::clock();
-	std::deque<int> sortedDeque;
-	for (size_t i = 0; i < _deqPairs.size(); ++i) {
-		sortedDeque.push_back(_deqPairs[i].first);
-	}
-	mergeInsertionSortDeque(sortedDeque, 0, sortedDeque.size() - 1);
-	for (size_t i = 0; i < _deqPairs.size(); ++i) {
-		sortedDeque.push_back(_deqPairs[i].second);
-	}
-	mergeInsertionSortDeque(sortedDeque, 0, sortedDeque.size() - 1);
-	_resultDeque = sortedDeque;
-	std::clock_t end = std::clock();
-	double elapsed = double(end - start) / CLOCKS_PER_SEC * 1000000.0;
-	return (elapsed);
-}
-
-void PmergeMe::mergeInsertionSortDeque(std::deque<int>& deq, int left, int right) {
-	if (right - left + 1 <= 5) {
-		insertionSortDeque(deq, left, right);
-	} else {
-		int mid = left + (right - left) / 2;
-		mergeInsertionSortDeque(deq, left, mid);
-		mergeInsertionSortDeque(deq, mid + 1, right);
-		mergeDeque(deq, left, mid, right);
-	}
-	// printDeque(deq, "After mergeInsertionSortDeque:");
-}
-
-void PmergeMe::mergeDeque(std::deque<int>& deq, int left, int mid, int right) {
-	int n1 = mid - left + 1;
-	int n2 = right - mid;
-
-	std::deque<int> L(n1), R(n2);
-
-	for (int i = 0; i < n1; ++i)
-		L[i] = deq[left + i];
-	for (int j = 0; j < n2; ++j)
-		R[j] = deq[mid + 1 + j];
-
-	int i = 0, j = 0, k = left;
-	while (i < n1 && j < n2) {
-		if (L[i] <= R[j]) {
-			deq[k] = L[i];
-			++i;
-		} else {
-			deq[k] = R[j];
-			++j;
-		}
-		++k;
-	}
-
-	while (i < n1) {
-		deq[k] = L[i];
-		++i;
-		++k;
-	}
-
-	while (j < n2) {
-		deq[k] = R[j];
-		++j;
-		++k;
-	}
-	// printDeque(deq, "After mergeDeque:");
-}
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -219,18 +130,6 @@ void PmergeMe::insertionSortVector(std::vector<int>& array, int left, int right)
 			--j;
 		}
 		array[j + 1] = key;
-	}
-}
-
-void PmergeMe::insertionSortDeque(std::deque<int>& deq, int left, int right) {
-	for (int i = left + 1; i <= right; ++i) {
-		int key = deq[i];
-		int j = i - 1;
-		while (j >= left && deq[j] > key) {
-			deq[j + 1] = deq[j];
-			--j;
-		}
-		deq[j + 1] = key;
 	}
 }
 
@@ -256,7 +155,68 @@ void PmergeMe::printDeque(const std::deque<int>& deq, const std::string& message
 	std::cout << std::endl;
 }
 
+void PmergeMe::printVecPairs(const std::vector<std::pair<int, int> >& pairs) {
+	for (size_t i = 0; i < pairs.size(); ++i) {
+		std::cout << "(" << pairs[i].first << ", " << pairs[i].second << ") ";
+	}
+	std::cout << std::endl;
+}
+
+void PmergeMe::printDeqPairs(const std::deque<std::pair<int, int> >& pairs) {
+	for (size_t i = 0; i < pairs.size(); ++i) {
+		std::cout << "(" << pairs[i].first << ", " << pairs[i].second << ") ";
+	}
+	std::cout << std::endl;
+}
+
 void PmergeMe::final_display() const {
 	printVector(_resultVector, "After: ");
 	// printDeque(_resultDeque, "Deque:");
+}
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                          Utils Template Functions                          */
+/*                                                                            */
+/* ************************************************************************** */
+
+template <typename T>
+int	PmergeMe::binarySearch(const T &list, int target, int left, int right) {
+	if (left > right)
+		return (0);
+	int	mid = (left + right) / 2;
+	if (left == right)
+		return target < list[left] ? left : left + 1;
+	if (target < list[mid])
+		return (binarySearch(list, target, left, mid));
+	return (binarySearch(list, target, mid + 1, right));
+}
+
+template <typename T>
+int PmergeMe::findMinFromMax(const T& container, int maxOfPair) {
+	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
+		if (it->second == maxOfPair) {
+			return (it->first);
+		}
+	}
+	throw std::runtime_error("Max value not found");
+}
+
+template <typename T>
+int PmergeMe::findMaxFromMin(const T& container, int minOfPair) {
+	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
+		if (it->first == minOfPair) {
+			return (it->second);
+		}
+	}
+	throw std::runtime_error("Min value not found");
+}
+
+template <typename T>
+int PmergeMe::findIndex(const T& container, int value) {
+	typename T::const_iterator it = std::lower_bound(container.begin(), container.end(), value);
+	if (it != container.end() && *it == value) {
+		return std::distance(container.begin(), it);
+	}
+	throw std::runtime_error("Value not found");
 }
