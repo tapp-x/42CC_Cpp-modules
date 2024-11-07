@@ -6,7 +6,7 @@
 /*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 16:11:11 by tappourc          #+#    #+#             */
-/*   Updated: 2024/11/04 12:13:34 by theoappourc      ###   ########.fr       */
+/*   Updated: 2024/11/07 13:06:02 by theoappourc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,15 @@ void PmergeMe::initializeDeqPairs(const std::deque<int>& input) {
 
 double PmergeMe::sortWithVector() {
 	std::clock_t start = std::clock();
-	// std::vector<int> sortedVector;
-	// for (size_t i = 0; i < _vecPairs.size(); ++i) {
-	// 	sortedVector.push_back(_vecPairs[i].first);
-	// }
+	
+	// Start with the recursive sort
 	mergeInsertionSortVector(_maxVec, 0, _maxVec.size() - 1);
-	printVector(_maxVec, "After recursive sort :");
 	_resultVector = _maxVec;
+	printVector(_maxVec, "After recursive sort :");
+
+	// Here handle the first insertion :
+	// insert the min corresponding to _vecMax[0]
+	
 
 	// for (size_t i = 0; i < _vecPairs.size(); ++i) {
 	// 	sortedVector.push_back(_vecPairs[i].second);
@@ -102,16 +104,14 @@ double PmergeMe::sortWithVector() {
 }
 
 void PmergeMe::mergeInsertionSortVector(std::vector<int>& vec, int left, int right) {
-	printVector(vec, "enter with this vec:");
+	// printVector(vec, "enter with this vec:");
 	if (right - left + 1 <= 5) {
 		insertionSortVector(vec, left, right);
 	} else {
 		int mid = left + (right - left) / 2;
 		mergeInsertionSortVector(vec, left, mid);
 		mergeInsertionSortVector(vec, mid + 1, right);
-		// mergeVector(vec, left, mid, right);
 	}
-	// printVector(vec, "After mergeInsertionSortVector:");
 }
 
 
@@ -132,18 +132,6 @@ void PmergeMe::insertionSortVector(std::vector<int>& array, int left, int right)
 		array[j + 1] = key;
 	}
 }
-
-// void PmergeMe::insertionSortDeque(std::deque<int>& deq, int left, int right) {
-// 	for (int i = left + 1; i <= right; ++i) {
-// 		int key = deq[i];
-// 		int j = i - 1;
-// 		while (j >= left && deq[j] > key) {
-// 			deq[j + 1] = deq[j];
-// 			--j;
-// 		}
-// 		deq[j + 1] = key;
-// 	}
-// }
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -186,16 +174,49 @@ void PmergeMe::final_display() const {
 	// printDeque(_resultDeque, "Deque:");
 }
 
-template <typename Container>
-int	PmergeMe::binarySearch(Container &list, int target, int left, int right) {
+/* ************************************************************************** */
+/*                                                                            */
+/*                          Utils Template Functions                          */
+/*                                                                            */
+/* ************************************************************************** */
+
+template <typename T>
+int	PmergeMe::binarySearch(const T &list, int target, int left, int right) {
 	if (left > right)
-		return 0;
-
+		return (0);
 	int	mid = (left + right) / 2;
-
 	if (left == right)
 		return target < list[left] ? left : left + 1;
 	if (target < list[mid])
-		return binarySearch(list, target, left, mid);
-	return binarySearch(list, target, mid + 1, right);
+		return (binarySearch(list, target, left, mid));
+	return (binarySearch(list, target, mid + 1, right));
+}
+
+template <typename T>
+int PmergeMe::findMinFromMax(const T& container, int maxOfPair) {
+	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
+		if (it->second == maxOfPair) {
+			return (it->first);
+		}
+	}
+	throw std::runtime_error("Max value not found");
+}
+
+template <typename T>
+int PmergeMe::findMaxFromMin(const T& container, int minOfPair) {
+	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
+		if (it->first == minOfPair) {
+			return (it->second);
+		}
+	}
+	throw std::runtime_error("Min value not found");
+}
+
+template <typename T>
+int PmergeMe::findIndex(const T& container, int value) {
+	typename T::const_iterator it = std::lower_bound(container.begin(), container.end(), value);
+	if (it != container.end() && *it == value) {
+		return std::distance(container.begin(), it);
+	}
+	throw std::runtime_error("Value not found");
 }

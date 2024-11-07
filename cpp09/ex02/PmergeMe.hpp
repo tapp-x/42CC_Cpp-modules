@@ -6,7 +6,7 @@
 /*   By: theoappourchaux <theoappourchaux@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 16:35:33 by tappourc          #+#    #+#             */
-/*   Updated: 2024/11/04 12:12:43 by theoappourc      ###   ########.fr       */
+/*   Updated: 2024/11/07 13:06:17 by theoappourc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,17 @@ public:
 	void	printDeqPairs(const std::deque<std::pair<int, int> >& pairs);
 	void	printVecPairs(const std::vector<std::pair<int, int> >& pairs);
 
-	template <typename Container>
-	static int	binarySearch(Container &list, int target, int left, int right);
+	template <typename T>
+	static int	binarySearch(const T &list, int target, int left, int right);
+
+	template <typename T>
+	int			findIndex(const T& container, int value);
+
+	template <typename T>
+	int			findMaxFromMin(const T& container, int minVal);
+
+	template <typename T>
+	int			findMinFromMax(const T& container, int maxVal);
 
 private:	
 	std::vector<int>					_resultVector;
