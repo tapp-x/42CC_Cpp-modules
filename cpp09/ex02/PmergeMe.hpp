@@ -14,7 +14,6 @@
 struct s_pair {
 	int min;
 	int max;
-	int index;
 };
 
 class PmergeMe {
